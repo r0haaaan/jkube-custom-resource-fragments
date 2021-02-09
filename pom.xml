@@ -17,9 +17,11 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>1.9.2.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-    <jkube.version>1.1.0-SNAPSHOT</jkube.version>
+    <jkube.version>1.1.0</jkube.version>
     <image.cache-from.uri>busybox:latest</image.cache-from.uri>
     <podset.replicas>3</podset.replicas>
+    <podset.name>example-podset</podset.name>
+    <podset.replicakey>replicas</podset.replicakey>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -88,6 +90,8 @@
                     <customResourceDefinition>podsets.demo.fabric8.io</customResourceDefinition>
                     <customResourceDefinition>dummies.demo.fabric8.io</customResourceDefinition>
                     <customResourceDefinition>crontabs.stable.example.com</customResourceDefinition>
+                    <customResourceDefinition>ats.cnat.programming-kubernetes.info</customResourceDefinition>
+                    <customResourceDefinitions>ingressroutes.traefik.containo.us</customResourceDefinitions>
                 </customResourceDefinitions>
             </resources>
         </configuration>
@@ -96,15 +100,6 @@
         <groupId>org.eclipse.jkube</groupId>
         <artifactId>openshift-maven-plugin</artifactId>
         <version>${jkube.version}</version>
-        <configuration>
-            <resources>
-                <customResourceDefinitions>
-                    <customResourceDefinition>podsets.demo.fabric8.io</customResourceDefinition>
-                    <customResourceDefinition>dummies.demo.fabric8.io</customResourceDefinition>
-                    <customResourceDefinition>crontabs.stable.example.com</customResourceDefinition>
-                </customResourceDefinitions>
-            </resources>
-        </configuration>
       </plugin>
     </plugins>
   </build>

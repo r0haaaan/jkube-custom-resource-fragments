@@ -1,6 +1,6 @@
 apiVersion: demo.fabric8.io/v1alpha1
 kind: PodSet
 metadata:
-  name: example-podset
+  name: ${podset.name}
 spec:
-  replicas: ${podset.replicas}
+  ${podset.replicakey}: ${podset.replicas}
