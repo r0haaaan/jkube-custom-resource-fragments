@@ -17,7 +17,7 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>1.9.2.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-    <jkube.version>1.1.1</jkube.version>
+    <jkube.version>1.2.0</jkube.version>
     <image.cache-from.uri>busybox:latest</image.cache-from.uri>
     <podset.replicas>3</podset.replicas>
     <podset.name>example-podset</podset.name>
@@ -84,18 +84,6 @@
         <groupId>org.eclipse.jkube</groupId>
         <artifactId>kubernetes-maven-plugin</artifactId>
         <version>${jkube.version}</version>
-        <configuration>
-            <resources>
-                <customResourceDefinitions>
-                    <customResourceDefinition>podsets.demo.fabric8.io</customResourceDefinition>
-                    <customResourceDefinition>dummies.demo.fabric8.io</customResourceDefinition>
-                    <customResourceDefinition>crontabs.stable.example.com</customResourceDefinition>
-                    <customResourceDefinition>ats.cnat.programming-kubernetes.info</customResourceDefinition>
-                    <customResourceDefinition>ingressroutes.traefik.containo.us</customResourceDefinition>
-                    <customResourceDefinition>virtualservices.networking.istio.io</customResourceDefinition>
-                </customResourceDefinitions>
-            </resources>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.eclipse.jkube</groupId>
